@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.hchen.himiuix.MiuiPreferenceCategory android:title="MiuiPreference">
+        <com.hchen.himiuix.MiuiPreference
+            android:summary="我是 Summary"
+            android:title="普通 Preference" />
+
+        <com.hchen.himiuix.MiuiPreference
+            android:icon="@drawable/ic_default_icon"
+            android:title="带 icon 的" />
+
+        <com.hchen.himiuix.MiuiPreference
+            android:icon="@drawable/ic_default_icon"
+            android:summary="我有一个一个 icon 哎！"
+            android:title="带 icon 的" />
+
+        <com.hchen.himiuix.MiuiPreference
+            android:key="pref_intent"
+            android:summary="点我点我点我！"
+            android:title="带意图的"
+            app:tip="会弹出一个小 Toast！" />
+
+        <com.hchen.himiuix.MiuiPreference
+            android:enabled="false"
+            android:fragment="com.hchen.himiuixdemo.BasePreferenceFragment$PrefsHome"
+            android:icon="@drawable/ic_default_icon"
+            android:summary="我被禁用了，呜呜呜~"
+            android:title="被禁用的"
+            app:tip="再点也没用" />
+    </com.hchen.himiuix.MiuiPreferenceCategory>
+
+    <com.hchen.himiuix.MiuiPreferenceCategory android:title="MiuiSwitchPreference">
+        <com.hchen.himiuix.MiuiSwitchPreference
+            android:summary="看不见我！看不见我！"
+            android:title="我是小开关" />
+
+        <com.hchen.himiuix.MiuiSwitchPreference
+            android:defaultValue="true"
+            android:summary="我是开着的！"
+            android:title="默认开启" />
+
+        <com.hchen.himiuix.MiuiSwitchPreference
+            android:key="pref_child"
+            android:summary="我有魔法，可以让下面消失！"
+            android:title="控制孩子？"
+            app:disableDependentsState="true" />
+
+        <com.hchen.himiuix.MiuiSwitchPreference
+            android:key="pref_child2"
+            android:title="我好像被控制了！"
+            app:dependency="pref_child" />
+
+        <com.hchen.himiuix.MiuiSwitchPreference
+            android:defaultValue="true"
+            android:enabled="false"
+            android:summary="我是开着的！但被禁用了！"
+            android:title="默认开启但禁用" />
+
+        <com.hchen.himiuix.MiuiSwitchPreference
+            android:enabled="false"
+            android:title="禁用" />
+    </com.hchen.himiuix.MiuiPreferenceCategory>
+</androidx.preference.PreferenceScreen>

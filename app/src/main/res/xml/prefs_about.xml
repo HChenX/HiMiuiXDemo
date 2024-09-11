@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.hchen.himiuix.MiuiPreferenceCategory android:title="MiuiEditTextPreference">
+        <com.hchen.himiuix.MiuiEditTextPreference
+            android:inputType="number"
+            android:title="QQ"
+            app:hint="请输入QQ号"
+            app:icon="@drawable/ic_default_icon" />
+    </com.hchen.himiuix.MiuiPreferenceCategory>
+
+    <com.hchen.himiuix.MiuiPreferenceCategory android:title="MiuiCardPreference">
+        <com.hchen.himiuix.MiuiCardPreference
+            app:backgroundColor="@color/card_background_waring"
+            app:iconCancel="true"
+            app:iconCancelColor="@color/cancel_background_waring"
+            app:summary="焕晨卡片"
+            app:summaryColor="@color/card_text_waring"
+            app:tittleColor="@color/card_text_waring" />
+
+        <com.hchen.himiuix.MiuiCardPreference
+            app:backgroundColor="@color/card_background_waring"
+            app:iconCancel="true"
+            app:iconCancelColor="@color/cancel_background_waring"
+            app:summary="今天也要开开心心的哦！"
+            app:summaryColor="@color/card_text_waring"
+            app:title="焕晨提醒！"
+            app:tittleColor="@color/card_text_waring" />
+
+        <com.hchen.himiuix.MiuiCardPreference
+            app:backgroundColor="@color/card_background"
+            app:iconArrowRight="true"
+            app:iconCancelColor="@color/cancel_background"
+            app:summary="躺床上很舒服，早点休息哦！"
+            app:title="焕晨小贴士！" />
+
+    </com.hchen.himiuix.MiuiPreferenceCategory>
+</androidx.preference.PreferenceScreen>

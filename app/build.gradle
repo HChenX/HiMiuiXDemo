@@ -1,0 +1,40 @@
+plugins {
+    alias(libs.plugins.android.application)
+}
+
+android {
+    namespace 'com.hchen.himiuixdemo'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.hchen.himiuixdemo"
+        minSdk 30
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_21
+        targetCompatibility JavaVersion.VERSION_21
+    }
+}
+
+dependencies {
+
+    implementation libs.appcompat
+    implementation libs.material
+    implementation 'androidx.fragment:fragment:1.8.3'
+    implementation 'androidx.preference:preference:1.2.1'
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.14'
+    implementation libs.activity
+    implementation libs.constraintlayout
+    implementation(project(':HiMiuiX'))
+}

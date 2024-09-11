@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.hchen.himiuix.MiuiPreferenceCategory android:title="MiuiAlertDialog">
+        <com.hchen.himiuix.MiuiPreference
+            android:key="prefs_dialog"
+            android:summary="将会弹出一个普通 dialog"
+            android:title="dialog" />
+
+        <com.hchen.himiuix.MiuiPreference
+            android:key="prefs_edit_dialog"
+            android:summary="将会弹出一个 edit dialog"
+            android:title="edit dialog" />
+
+        <com.hchen.himiuix.MiuiPreference
+            android:key="prefs_list_dialog"
+            android:summary="将会弹出多选 list dialog"
+            android:title="list dialog" />
+
+        <com.hchen.himiuix.MiuiPreference
+            android:key="prefs_view_dialog"
+            android:summary="将会弹出自定义 view dialog"
+            android:title="自定义 view dialog" />
+
+    </com.hchen.himiuix.MiuiPreferenceCategory>
+
+    <com.hchen.himiuix.MiuiPreferenceCategory android:title="MiuiDropDownPreference">
+        <com.hchen.himiuix.MiuiDropDownPreference
+            android:summary="随便选一个吧~"
+            android:title="选择"
+            app:entries="@array/string_value"
+            app:entryValues="@array/int_value"
+            app:showOnSummary="true" />
+
+        <com.hchen.himiuix.MiuiDropDownPreference
+            android:enabled="false"
+            android:summary="这个不能选！"
+            android:title="被禁用的选择"
+            app:entries="@array/string_value"
+            app:entryValues="@array/int_value"
+            app:showOnSummary="true" />
+
+    </com.hchen.himiuix.MiuiPreferenceCategory>
+
+    <com.hchen.himiuix.MiuiPreferenceCategory android:title="MiuiSeekBarPreference">
+        <com.hchen.himiuix.MiuiSeekBarPreference
+            android:summary="滑动试试看？"
+            android:title="SeekBar"
+            app:defaultValue="10"
+            app:format="￥"
+            app:maxValue="100"
+            app:minValue="10"
+            app:showSeekBarValue="true" />
+
+        <com.hchen.himiuix.MiuiSeekBarPreference
+            android:summary="点击试试看？"
+            android:title="SeekBar dialog"
+            app:defaultValue="10"
+            app:dialogEnabled="true"
+            app:format="￥"
+            app:maxValue="100"
+            app:minValue="10"
+            app:showSeekBarValue="true" />
+    </com.hchen.himiuix.MiuiPreferenceCategory>
+</androidx.preference.PreferenceScreen>

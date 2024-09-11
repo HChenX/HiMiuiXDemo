@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="string_value">
+        <item>焕晨</item>
+        <item>小焕晨</item>
+        <item>大焕晨</item>
+    </string-array>
+
+    <string-array name="int_value">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+</resources>
