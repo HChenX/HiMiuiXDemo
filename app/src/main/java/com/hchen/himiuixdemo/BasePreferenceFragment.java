@@ -1,5 +1,6 @@
 package com.hchen.himiuixdemo;
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.SparseBooleanArray;
 import android.view.HapticFeedbackConstants;
@@ -17,6 +18,7 @@ import com.hchen.himiuix.MiuiAlertDialog;
 import com.hchen.himiuix.MiuiPreference;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public abstract class BasePreferenceFragment extends PreferenceFragmentCompat {
 
@@ -77,6 +79,12 @@ public abstract class BasePreferenceFragment extends PreferenceFragmentCompat {
                     .setMessage("小焕晨")
                     .setHapticFeedbackEnabled(true)
                     .setCanceledOnTouchOutside(false)
+                    .setTextTypeface(new MiuiAlertDialog.MakeTypeface() {
+                        @Override
+                        public void onMakeTypeface(HashMap<MiuiAlertDialog.TypefaceObject, Typeface> typefaceHashMap) {
+                            typefaceHashMap.put(MiuiAlertDialog.TypefaceObject.TYPEFACE_ALERT_TITLE, Typeface.DEFAULT_BOLD);
+                        }
+                    })
                     .setPositiveButton("确定", null)
                     .setNegativeButton("拒绝", null);
             switch (preference.getKey()) {
@@ -112,9 +120,9 @@ public abstract class BasePreferenceFragment extends PreferenceFragmentCompat {
                 }
                 case "prefs_view_dialog" -> {
                     miuiAlertDialog
-                            .setCustomView(R.layout.custom_view, new MiuiAlertDialog.CustomViewCallBack() {
+                            .setCustomView(R.layout.custom_view, new MiuiAlertDialog.OnBindView() {
                                 @Override
-                                public void onCustomViewCreate(View view) {
+                                public void onBindView(View view) {
                                     ImageView imageView = view.findViewById(R.id.image);
                                     imageView.setOnClickListener(new View.OnClickListener() {
                                         @Override

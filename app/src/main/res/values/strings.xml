@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">HiMiuiXDemo</string>
+    <string name="prefs_name">himiuix_demo_prefs</string>
 </resources>

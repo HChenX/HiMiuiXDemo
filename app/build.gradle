@@ -3,6 +3,27 @@ plugins {
 }
 
 android {
+    Properties properties = new Properties()
+    InputStream inputStream = project.rootProject.file('local.properties').newDataInputStream()
+    properties.load(inputStream)
+
+    def keyKeyStoreFile = file(properties.getProperty('keyStoreFile'))
+    def keyKeyStorePassword = properties.getProperty('keyStorePassword')
+    def keyKeyAlias = properties.getProperty('keyAlias')
+    def keyKeyAliasPassword = properties.getProperty('keyAliasPassword')
+
+    signingConfigs {
+        release {
+            storeFile keyKeyStoreFile
+            storePassword keyKeyStorePassword
+            keyAlias keyKeyAlias
+            keyPassword keyKeyAliasPassword
+            enableV2Signing true
+            enableV3Signing true
+            enableV4Signing true
+        }
+    }
+
     namespace 'com.hchen.himiuixdemo'
     compileSdk 34
 
@@ -16,8 +37,13 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            minifyEnabled false
         }
     }
 

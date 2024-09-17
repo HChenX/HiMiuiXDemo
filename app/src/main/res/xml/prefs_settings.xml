@@ -27,6 +27,7 @@
 
     <com.hchen.himiuix.MiuiPreferenceCategory android:title="MiuiDropDownPreference">
         <com.hchen.himiuix.MiuiDropDownPreference
+            android:defaultValue="0"
             android:summary="随便选一个吧~"
             android:title="选择"
             app:entries="@array/string_value"
@@ -47,10 +48,10 @@
         <com.hchen.himiuix.MiuiSeekBarPreference
             android:summary="滑动试试看？"
             android:title="SeekBar"
-            app:defaultValue="10"
+            app:defaultValue="0"
             app:format="￥"
             app:maxValue="100"
-            app:minValue="10"
+            app:minValue="-100"
             app:showSeekBarValue="true" />
 
         <com.hchen.himiuix.MiuiSeekBarPreference
@@ -58,9 +59,21 @@
             android:title="SeekBar dialog"
             app:defaultValue="10"
             app:dialogEnabled="true"
+            app:displayDividerValue="100"
             app:format="￥"
             app:maxValue="100"
-            app:minValue="10"
+            app:minValue="-100"
+            app:showSeekBarValue="true"
+            app:stepValue="10" />
+
+        <com.hchen.himiuix.MiuiSeekBarPreference
+            android:enabled="false"
+            android:summary="滑不了我！嘿嘿"
+            android:title="SeekBar"
+            app:defaultValue="0"
+            app:format="￥"
+            app:maxValue="100"
+            app:minValue="-100"
             app:showSeekBarValue="true" />
     </com.hchen.himiuix.MiuiPreferenceCategory>
 </androidx.preference.PreferenceScreen>

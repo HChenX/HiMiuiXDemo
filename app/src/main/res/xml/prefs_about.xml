@@ -13,6 +13,7 @@
     <com.hchen.himiuix.MiuiPreferenceCategory android:title="MiuiCardPreference">
         <com.hchen.himiuix.MiuiCardPreference
             app:backgroundColor="@color/card_background_waring"
+            app:customView="@layout/card_custom_view"
             app:iconCancel="true"
             app:iconCancelColor="@color/cancel_background_waring"
             app:summary="焕晨卡片"
