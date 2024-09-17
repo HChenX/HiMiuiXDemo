@@ -57,7 +57,7 @@
         <com.hchen.himiuix.MiuiSeekBarPreference
             android:summary="点击试试看？"
             android:title="SeekBar dialog"
-            app:defaultValue="10"
+            app:defaultValue="0"
             app:dialogEnabled="true"
             app:displayDividerValue="100"
             app:format="￥"

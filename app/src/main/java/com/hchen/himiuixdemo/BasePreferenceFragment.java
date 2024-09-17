@@ -15,6 +15,7 @@ import androidx.preference.PreferenceFragmentCompat;
 
 import com.hchen.himiuix.DialogInterface;
 import com.hchen.himiuix.MiuiAlertDialog;
+import com.hchen.himiuix.MiuiCardPreference;
 import com.hchen.himiuix.MiuiPreference;
 
 import java.util.ArrayList;
@@ -146,6 +147,30 @@ public abstract class BasePreferenceFragment extends PreferenceFragmentCompat {
         @Override
         public int id() {
             return R.xml.prefs_about;
+        }
+
+        @Override
+        public void initPrefs() {
+            MiuiCardPreference miuiCardPreference = findPreference("prefs_card");
+
+            miuiCardPreference.setCustomViewCallBack(new MiuiCardPreference.OnBindView() {
+                @Override
+                public void onBindView(View view) {
+                    view.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Toast.makeText(getContext(), "你点击了我！", Toast.LENGTH_SHORT).show();
+                            v.performHapticFeedback(HapticFeedbackConstants.CONTEXT_CLICK);
+                        }
+                    });
+                }
+            });
+            miuiCardPreference.setIconClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(getContext(), "你点击了图标！", Toast.LENGTH_SHORT).show();
+                }
+            });
         }
     }
 
