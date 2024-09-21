@@ -109,7 +109,7 @@ public abstract class BasePreferenceFragment extends PreferenceFragmentCompat {
                             .setItems(new CharSequence[]{"焕晨", "大焕晨", "小焕晨"}, new DialogInterface.OnItemsChangeListener() {
                                 @Override
                                 public void onClick(DialogInterface dialogInterface, CharSequence item, int which) {
-                                    Toast.makeText(getContext(), "你点击了: " + item, Toast.LENGTH_SHORT).show();
+                                    // Toast.makeText(getContext(), "你点击了: " + item, Toast.LENGTH_SHORT).show();
                                 }
 
                                 @Override

@@ -25,6 +25,20 @@
 
     </com.hchen.himiuix.MiuiPreferenceCategory>
 
+    <com.hchen.himiuix.MiuiPreferenceCategory android:title="MiuiColorPickerPreference">
+        <com.hchen.himiuix.MiuiColorPickerPreference
+            android:summary="将会弹出 color dialog"
+            android:title="color dialog"
+            app:defaultColor="#FF099BFB" />
+
+        <com.hchen.himiuix.MiuiColorPickerPreference
+            android:enabled="false"
+            android:summary="被禁用的 color dialog"
+            android:title="color dialog"
+            app:defaultColor="#FF099BFB" />
+
+    </com.hchen.himiuix.MiuiPreferenceCategory>
+
     <com.hchen.himiuix.MiuiPreferenceCategory android:title="MiuiDropDownPreference">
         <com.hchen.himiuix.MiuiDropDownPreference
             android:defaultValue="0"
@@ -48,7 +62,8 @@
         <com.hchen.himiuix.MiuiSeekBarPreference
             android:summary="滑动试试看？"
             android:title="SeekBar"
-            app:defaultValue="0"
+            app:defValueString="默认"
+            app:defaultValue="20"
             app:format="￥"
             app:maxValue="100"
             app:minValue="-100"
@@ -70,7 +85,7 @@
             android:enabled="false"
             android:summary="滑不了我！嘿嘿"
             android:title="SeekBar"
-            app:defaultValue="0"
+            app:defaultValue="30"
             app:format="￥"
             app:maxValue="100"
             app:minValue="-100"
