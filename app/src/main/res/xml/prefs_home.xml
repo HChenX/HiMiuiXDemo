@@ -44,8 +44,7 @@
         <com.hchen.himiuix.MiuiSwitchPreference
             android:key="pref_child"
             android:summary="我有魔法，可以让下面消失！"
-            android:title="控制孩子？"
-            app:disableDependentsState="true" />
+            android:title="控制孩子？" />
 
         <com.hchen.himiuix.MiuiSwitchPreference
             android:key="pref_child2"

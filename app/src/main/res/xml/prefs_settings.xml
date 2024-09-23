@@ -27,6 +27,7 @@
 
     <com.hchen.himiuix.MiuiPreferenceCategory android:title="MiuiColorPickerPreference">
         <com.hchen.himiuix.MiuiColorPickerPreference
+            android:key="color_test"
             android:summary="将会弹出 color dialog"
             android:title="color dialog"
             app:defaultColor="#FF099BFB" />

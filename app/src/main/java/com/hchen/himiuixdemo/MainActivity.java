@@ -1,6 +1,5 @@
 package com.hchen.himiuixdemo;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.widget.RadioGroup;
 
@@ -18,7 +17,7 @@ import androidx.viewpager2.widget.ViewPager2;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    private static Context context;
+    protected static String TAG = "MiuiPreference";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        context = this;
         Toolbar toolbar = findViewById(R.id.toolbar);
         ViewPager2 viewPager2 = findViewById(R.id.view_pager);
         RadioGroup radioGroup = findViewById(R.id.radio_group);
@@ -66,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
                 if (checkedId == R.id.radio_button_home) {
                     viewPager2.setCurrentItem(0);
                     toolbar.setTitle("Home");
-                    
+
                 } else if (checkedId == R.id.radio_button_settings) {
                     viewPager2.setCurrentItem(1);
                     toolbar.setTitle("Settings");
