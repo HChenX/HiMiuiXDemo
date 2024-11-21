@@ -2,6 +2,7 @@ package com.hchen.himiuixdemo;
 
 import android.os.Bundle;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
@@ -18,6 +19,11 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     protected static String TAG = "MiuiPreference";
+
+    public enum TestEnum {
+        Hook,
+        Hook2,
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,5 +80,14 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+        test(TestEnum.Hook);
+    }
+    
+    public void test(TestEnum testEnum){
+        if (testEnum == TestEnum.Hook){
+            Toast.makeText(this, "Hook", Toast.LENGTH_SHORT).show();
+        } else if (testEnum == TestEnum.Hook2) {
+            Toast.makeText(this, "Hook2", Toast.LENGTH_SHORT).show();
+        }
     }
 }

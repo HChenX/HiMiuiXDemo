@@ -34,11 +34,13 @@
     <com.hchen.himiuix.MiuiPreferenceCategory android:title="MiuiSwitchPreference">
         <com.hchen.himiuix.MiuiSwitchPreference
             android:summary="看不见我！看不见我！"
+            android:summaryOff="嘿嘿"
             android:title="我是小开关" />
 
         <com.hchen.himiuix.MiuiSwitchPreference
             android:defaultValue="true"
             android:summary="我是开着的！"
+            android:summaryOff="别关了我，呜呜呜"
             android:title="默认开启" />
 
         <com.hchen.himiuix.MiuiSwitchPreference

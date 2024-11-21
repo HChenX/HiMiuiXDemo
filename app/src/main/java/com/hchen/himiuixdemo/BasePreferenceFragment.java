@@ -1,8 +1,10 @@
 package com.hchen.himiuixdemo;
 
-import android.graphics.Typeface;
 import android.os.Bundle;
-import android.util.SparseBooleanArray;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
+import android.util.Log;
 import android.view.HapticFeedbackConstants;
 import android.view.View;
 import android.widget.ImageView;
@@ -14,14 +16,15 @@ import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 
 import com.hchen.himiuix.DialogInterface;
-import com.hchen.himiuix.MiuiAlertDialog;
 import com.hchen.himiuix.MiuiCardPreference;
 import com.hchen.himiuix.MiuiPreference;
+import com.hchen.himiuix.MiuiSwitchPreference;
+import com.hchen.himiuix.MiuiAlertDialog;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public abstract class BasePreferenceFragment extends PreferenceFragmentCompat {
+    private final static String TAG = "MiuiPreference";
 
     @Override
     public void onCreatePreferences(@Nullable Bundle savedInstanceState, @Nullable String rootKey) {
@@ -43,11 +46,37 @@ public abstract class BasePreferenceFragment extends PreferenceFragmentCompat {
 
         @Override
         public void initPrefs() {
+            Handler handler = new Handler(Looper.getMainLooper()) {
+                @Override
+                public void handleMessage(@NonNull Message msg) {
+                    if (msg.what == 1) {
+                        MiuiSwitchPreference preference = (MiuiSwitchPreference) ((Object[]) msg.obj)[0];
+                        boolean value = (boolean) ((Object[]) msg.obj)[1];
+                        preference.setChecked(!value);
+                        Log.i(TAG, "handleMessage: newValue: " + !value);
+                    }
+                }
+            };
+            MiuiSwitchPreference miuiSwitchPreference = findPreference("pref_child");
             MiuiPreference preference = findPreference("pref_intent");
+            miuiSwitchPreference.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
+                @Override
+                public boolean onPreferenceChange(@NonNull Preference preference, Object newValue) {
+                    Message message = new Message();
+                    message.what = 1;
+                    message.obj = new Object[]{preference, newValue};
+                    handler.removeMessages(1);
+                    handler.sendMessageDelayed(message, 0);
+                    return true;
+                }
+            });
             preference.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
                 public boolean onPreferenceClick(@NonNull Preference preference) {
                     Toast.makeText(getContext(), "你点击了我！", Toast.LENGTH_SHORT).show();
+                    new Handler(Looper.getMainLooper()).postDelayed(() -> {
+                        ((MiuiPreference) preference).setTipText("哇卡哇卡！");
+                    }, 500);
                     return true;
                 }
             });
@@ -80,12 +109,6 @@ public abstract class BasePreferenceFragment extends PreferenceFragmentCompat {
                     .setMessage("小焕晨")
                     .setHapticFeedbackEnabled(true)
                     .setCanceledOnTouchOutside(false)
-                    .setTextTypeface(new MiuiAlertDialog.MakeTypeface() {
-                        @Override
-                        public void onMakeTypeface(HashMap<MiuiAlertDialog.TypefaceObject, Typeface> typefaceHashMap) {
-                            typefaceHashMap.put(MiuiAlertDialog.TypefaceObject.TYPEFACE_ALERT_TITLE, Typeface.DEFAULT_BOLD);
-                        }
-                    })
                     .setPositiveButton("确定", null)
                     .setNegativeButton("拒绝", null);
             switch (preference.getKey()) {
@@ -95,9 +118,10 @@ public abstract class BasePreferenceFragment extends PreferenceFragmentCompat {
                 }
                 case "prefs_edit_dialog" -> {
                     miuiAlertDialog
-                            .setEditText(new DialogInterface.TextWatcher() {
+                            .setEnableEditTextView(true)
+                            .setEditText("", new DialogInterface.TextWatcher() {
                                 @Override
-                                public void onResult(CharSequence s) {
+                                public void onResult(DialogInterface dialog, CharSequence s) {
                                     Toast.makeText(getContext(), "你输入了: " + s, Toast.LENGTH_SHORT).show();
                                 }
                             })
@@ -105,15 +129,18 @@ public abstract class BasePreferenceFragment extends PreferenceFragmentCompat {
                 }
                 case "prefs_list_dialog" -> {
                     miuiAlertDialog
-                            .isMultiSelect(true)
-                            .setItems(new CharSequence[]{"焕晨", "大焕晨", "小焕晨"}, new DialogInterface.OnItemsChangeListener() {
+                            .setEnableListSelectView(true)
+                            .setEnableMultiSelect(true)
+                            .setEnableListSpringBack(true)
+                            .setItems(new CharSequence[]{"焕晨0", "小焕晨0", "小焕晨1", "大焕晨0", "大焕晨1", "大焕晨2", "大焕晨3", "大焕晨4", 
+                                    "大焕晨5", "大焕晨6", "大焕晨7", "大焕晨8", "大焕晨9"}, new DialogInterface.OnItemsClickListener() {
                                 @Override
-                                public void onClick(DialogInterface dialogInterface, CharSequence item, int which) {
+                                public void onClick(DialogInterface dialog, CharSequence item, int which) {
                                     // Toast.makeText(getContext(), "你点击了: " + item, Toast.LENGTH_SHORT).show();
                                 }
 
                                 @Override
-                                public void onResult(ArrayList<CharSequence> selectedItems, ArrayList<CharSequence> items, SparseBooleanArray booleanArray) {
+                                public void onResult(DialogInterface dialog, ArrayList<CharSequence> items, ArrayList<CharSequence> selectedItems) {
                                     Toast.makeText(getContext(), "结果: " + selectedItems, Toast.LENGTH_SHORT).show();
                                 }
                             })
@@ -121,7 +148,8 @@ public abstract class BasePreferenceFragment extends PreferenceFragmentCompat {
                 }
                 case "prefs_view_dialog" -> {
                     miuiAlertDialog
-                            .setCustomView(R.layout.custom_view, new MiuiAlertDialog.OnBindView() {
+                            .setEnableCustomView(true)
+                            .setCustomView(R.layout.custom_view, new DialogInterface.OnBindView() {
                                 @Override
                                 public void onBindView(View view) {
                                     ImageView imageView = view.findViewById(R.id.image);
@@ -135,7 +163,6 @@ public abstract class BasePreferenceFragment extends PreferenceFragmentCompat {
                                 }
                             })
                             .show();
-
                 }
             }
             return true;
