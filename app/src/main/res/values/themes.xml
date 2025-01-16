@@ -1,11 +1,26 @@
 <resources>
     <!-- Base application theme. -->
-    <style name="Base.Theme.HiMiuiXDemo" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.HiMiuiXDemo" parent="Theme.AppCompat.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
-        <item name="colorOnBackground">@color/white</item>
         <item name="android:colorBackground">@color/white</item>
     </style>
 
     <style name="Theme.HiMiuiXDemo" parent="Base.Theme.HiMiuiXDemo" />
+
+    <style name="Theme.HiMiuiXDemo.Translucent" parent="Base.Theme.HiMiuiXDemo">
+        <item name="android:statusBarColor">@color/color_transparent</item>
+        <item name="android:windowBackground">@color/color_transparent</item>
+        <item name="android:navigationBarColor">@color/color_transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:windowEnterAnimation">@null</item>
+        <item name="android:windowExitAnimation">@null</item>
+    </style>
+
+    <style name="Theme.HiMiuiXDemo.Translucent.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowActionBarOverlay">false</item>
+    </style>
 </resources>

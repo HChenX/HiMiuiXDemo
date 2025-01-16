@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.util.Log;
 import android.view.HapticFeedbackConstants;
 import android.view.View;
 import android.widget.ImageView;
@@ -16,10 +15,10 @@ import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 
 import com.hchen.himiuix.DialogInterface;
+import com.hchen.himiuix.MiuiAlertDialog;
 import com.hchen.himiuix.MiuiCardPreference;
 import com.hchen.himiuix.MiuiPreference;
 import com.hchen.himiuix.MiuiSwitchPreference;
-import com.hchen.himiuix.MiuiAlertDialog;
 
 import java.util.ArrayList;
 
@@ -50,10 +49,10 @@ public abstract class BasePreferenceFragment extends PreferenceFragmentCompat {
                 @Override
                 public void handleMessage(@NonNull Message msg) {
                     if (msg.what == 1) {
-                        MiuiSwitchPreference preference = (MiuiSwitchPreference) ((Object[]) msg.obj)[0];
-                        boolean value = (boolean) ((Object[]) msg.obj)[1];
-                        preference.setChecked(!value);
-                        Log.i(TAG, "handleMessage: newValue: " + !value);
+                        // MiuiSwitchCompatitchPreference preference = (MiuiSwitchPreference) ((Object[]) msg.obj)[0];
+                        // boolean value = (boolean) ((Object[]) msg.obj)[1];
+                        // preference.setChecked(!value);
+                        // Log.i(TAG, "handleMessage: newValue: " + !value);
                     }
                 }
             };
