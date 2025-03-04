@@ -11,7 +11,7 @@
     app:layout_constraintTop_toTopOf="parent">
 
     <TextView
-        android:id="@+id/card_tittle"
+        android:id="@+id/card_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingBottom="20sp"
@@ -31,5 +31,5 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/card_tittle" />
+        app:layout_constraintTop_toBottomOf="@id/card_title" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,7 +3,7 @@
     <style name="Base.Theme.HiMiuiXDemo" parent="Theme.AppCompat.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
-        <item name="android:colorBackground">@color/white</item>
+        <item name="android:colorBackground">#F7F7F7</item>
     </style>
 
     <style name="Theme.HiMiuiXDemo" parent="Base.Theme.HiMiuiXDemo" />
