@@ -63,4 +63,50 @@
             android:enabled="false"
             android:title="禁用" />
     </com.hchen.himiuix.MiuiPreferenceCategory>
+
+    <com.hchen.himiuix.MiuiPreferenceCategory android:title="MiuiCheckBoxPreference">
+        <com.hchen.himiuix.MiuiCheckBoxPreference
+            android:defaultValue="true"
+            android:enabled="true"
+            android:key="checkbox_1"
+            android:summaryOff="关闭"
+            android:summaryOn="开启"
+            android:title="我是小 CheckBox" />
+
+        <com.hchen.himiuix.MiuiCheckBoxPreference
+            android:enabled="true"
+            android:key="checkbox_2"
+            android:title="被控制的 CheckBox"
+            app:dependency="checkbox_1" />
+
+        <com.hchen.himiuix.MiuiCheckBoxPreference
+            android:enabled="false"
+            android:summary="我被禁用了"
+            android:title="我是小 CheckBox" />
+
+        <com.hchen.himiuix.MiuiCheckBoxPreference
+            android:defaultValue="true"
+            android:enabled="false"
+            android:summary="选中，但被禁用"
+            android:title="我是小 CheckBox" />
+
+        <com.hchen.himiuix.MiuiCheckBoxPreference
+            android:enabled="true"
+            android:summaryOff="关闭"
+            android:summaryOn="开启"
+            android:title="CheckBox Start"
+            app:buttonLocation="start" />
+
+        <com.hchen.himiuix.MiuiCheckBoxPreference
+            android:defaultValue="true"
+            android:enabled="false"
+            android:title="CheckBox Start"
+            app:buttonLocation="start" />
+
+        <com.hchen.himiuix.MiuiCheckBoxPreference
+            android:enabled="false"
+            android:title="CheckBox Start"
+            app:buttonLocation="start" />
+
+    </com.hchen.himiuix.MiuiPreferenceCategory>
 </androidx.preference.PreferenceScreen>

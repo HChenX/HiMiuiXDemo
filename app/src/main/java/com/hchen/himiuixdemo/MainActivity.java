@@ -1,5 +1,6 @@
 package com.hchen.himiuixdemo;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.widget.RadioGroup;
 
@@ -74,5 +75,10 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    @Override
+    public void onConfigurationChanged(@NonNull Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
     }
 }

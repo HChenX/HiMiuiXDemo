@@ -6,6 +6,7 @@ import android.os.Looper;
 import android.os.Message;
 import android.view.HapticFeedbackConstants;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -150,7 +151,7 @@ public abstract class BasePreferenceFragment extends PreferenceFragmentCompat {
                             .setEnableCustomView(true)
                             .setCustomView(R.layout.custom_view, new DialogInterface.OnBindView() {
                                 @Override
-                                public void onBindView(View view) {
+                                public void onBindView(ViewGroup root, View view) {
                                     ImageView imageView = view.findViewById(R.id.image);
                                     imageView.setOnClickListener(new View.OnClickListener() {
                                         @Override
@@ -186,7 +187,7 @@ public abstract class BasePreferenceFragment extends PreferenceFragmentCompat {
                         @Override
                         public void onClick(View v) {
                             Toast.makeText(getContext(), "你点击了我！", Toast.LENGTH_SHORT).show();
-                            v.performHapticFeedback(HapticFeedbackConstants.CONTEXT_CLICK);
+                            v.performHapticFeedback(HapticFeedbackConstants.CONFIRM);
                         }
                     });
                 }
