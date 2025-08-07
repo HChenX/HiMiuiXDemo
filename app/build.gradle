@@ -28,6 +28,8 @@ android {
 }
 
 dependencies {
+    implementation project(':HiMiuix')
+
     implementation libs.viewpager2
     implementation libs.fragment
     implementation libs.preference

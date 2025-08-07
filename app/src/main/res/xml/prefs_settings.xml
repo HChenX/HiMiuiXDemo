@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.hchen.himiuix.preference.MiuixPreferenceCategory android:title="Test Title">
+        <com.hchen.himiuix.preference.MiuixPreference
+            android:fragment="com.hchen.himiuixdemo.fragment.HomeFragment"
+            android:summary="Test Summary"
+            android:title="Test Title" />
+        <com.hchen.himiuix.preference.MiuixPreference
+            android:icon="@drawable/ic_default_icon"
+            android:title="Test Title" />
+        <com.hchen.himiuix.preference.MiuixPreference android:title="Test Title" />
+        <com.hchen.himiuix.preference.MiuixDropDownPreference
+            android:entries="@array/drop_down"
+            android:title="Test Title"
+            android:value="1"
+            app:showOnTip="true" />
+        <com.hchen.himiuix.preference.MiuixSwitchPreference
+            android:key="pref_child"
+            android:summaryOff="Summary OFF"
+            android:summaryOn="Summary ON"
+            android:title="Test Title" />
+        <com.hchen.himiuix.preference.MiuixSwitchPreference
+            android:checked="true"
+            android:defaultValue="true"
+            android:key="pref_child1"
+            android:summaryOff="Summary OFF"
+            android:summaryOn="Summary ON"
+            android:title="Test Title"
+            app:dependency="pref_child" />
+        <com.hchen.himiuix.preference.MiuixSwitchPreference
+            android:defaultValue="true"
+            android:summaryOff="Summary OFF"
+            android:summaryOn="Summary ON"
+            android:title="Test Title" />
+        <com.hchen.himiuix.preference.MiuixSwitchPreference
+            android:summaryOff="Summary OFF"
+            android:summaryOn="Summary ON"
+            android:title="Test Title" />
+        <com.hchen.himiuix.preference.MiuixSwitchPreference
+            android:summaryOff="Summary OFF"
+            android:summaryOn="Summary ON"
+            android:title="Test Title" />
+        <com.hchen.himiuix.preference.MiuixSwitchPreference
+            android:summaryOff="Summary OFF"
+            android:summaryOn="Summary ON"
+            android:title="Test Title" />
+        <com.hchen.himiuix.preference.MiuixSwitchPreference
+            android:summaryOff="Summary OFF"
+            android:summaryOn="Summary ON"
+            android:title="Test Title" />
+        <com.hchen.himiuix.preference.MiuixSwitchPreference
+            android:summaryOff="Summary OFF"
+            android:summaryOn="Summary ON"
+            android:title="Test Title" />
+        <com.hchen.himiuix.preference.MiuixCheckBoxPreference android:title="Test Title" />
+        <com.hchen.himiuix.preference.MiuixColorPickerPreference android:title="Test Title" />
+        <com.hchen.himiuix.preference.MiuixSeekBarPreference
+            android:defaultValue="50"
+            android:title="Test Title"
+            android:value="50"
+            app:alwaysHapticFeedback="true"
+            app:maxValue="100"
+            app:minValue="0"
+            app:showValueOnTip="false" />
+        <com.hchen.himiuix.preference.MiuixSeekBarPreference
+            android:defaultValue="50"
+            android:title="Test Title"
+            app:alwaysHapticFeedback="true"
+            app:enableDialogMode="true"
+            app:maxValue="100"
+            app:minValue="0"
+            app:showValueOnTip="true" />
+        <com.hchen.himiuix.preference.MiuixEditPreference
+            android:defaultValue="HiMiuix"
+            android:title="Test Title" />
+        <com.hchen.himiuix.preference.MiuixListPreference
+            android:entries="@array/drop_down"
+            android:key="prefs_list"
+            android:maxHeight="350dp"
+            android:title="Test Title" />
+
+        <com.hchen.himiuix.preference.MiuixRadioGroupPreference>
+            <com.hchen.himiuix.preference.MiuixRadioButtonPreference
+                android:key="radio_1"
+                android:title="Test Title" />
+            <com.hchen.himiuix.preference.MiuixRadioButtonPreference
+                android:key="radio_2"
+                android:title="Test Title" />
+            <com.hchen.himiuix.preference.MiuixRadioButtonPreference
+                android:key="radio_3"
+                android:title="Test Title" />
+        </com.hchen.himiuix.preference.MiuixRadioGroupPreference>
+    </com.hchen.himiuix.preference.MiuixPreferenceCategory>
+</androidx.preference.PreferenceScreen>

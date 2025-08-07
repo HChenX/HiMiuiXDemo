@@ -21,3 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "HiMiuixDemo"
 include ':app'
+include ':HiMiuix'

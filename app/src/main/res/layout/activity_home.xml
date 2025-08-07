@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/home_pager"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.hchen.himiuix.MiuixViewGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:dividerTitle="Test Divider 2">
+
+            <com.hchen.himiuix.MiuixBasicView
+                android:id="@+id/test_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:title="Test Title"
+                app:indicator="@drawable/miuix_indicator_arrow_right"
+                app:tip="Test Tip" />
+
+            <com.hchen.himiuix.MiuixSwitchView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:icon="@drawable/ic_default_icon"
+                android:summary="Test Summary"
+                android:summaryOff="Test Switch OFF"
+                android:summaryOn="Test Switch ON"
+                android:title="Test Title"
+                app:tip="Test Tip"
+                app:tipOff="Test Tip OFF"
+                app:tipOn="Test Tip ON" />
+
+            <com.hchen.himiuix.MiuixCheckBoxView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:icon="@drawable/ic_default_icon"
+                android:summary="Test Summary"
+                android:summaryOff="Test Switch OFF"
+                android:summaryOn="Test Switch ON"
+                android:title="Test Title"
+                app:tip="Test Tip"
+                app:tipOff="Test Tip OFF"
+                app:tipOn="Test Tip ON" />
+
+            <com.hchen.himiuix.MiuixRadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.hchen.himiuix.MiuixRadioButtonView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:icon="@drawable/ic_default_icon"
+                    android:summary="Test Summary"
+                    android:summaryOff="Test Switch OFF"
+                    android:summaryOn="Test Switch ON"
+                    android:title="Test Title"
+                    app:tip="Test Tip"
+                    app:tipOff="Test Tip OFF"
+                    app:tipOn="Test Tip ON" />
+
+                <com.hchen.himiuix.MiuixRadioButtonView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:icon="@drawable/ic_default_icon"
+                    android:summary="Test Summary"
+                    android:summaryOff="Test Switch OFF"
+                    android:summaryOn="Test Switch ON"
+                    android:title="Test Title"
+                    app:tip="Test Tip"
+                    app:tipOff="Test Tip OFF"
+                    app:tipOn="Test Tip ON" />
+
+                <com.hchen.himiuix.MiuixRadioButtonView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:icon="@drawable/ic_default_icon"
+                    android:summary="Test Summary"
+                    android:summaryOff="Test Switch OFF"
+                    android:summaryOn="Test Switch ON"
+                    android:title="Test Title"
+                    app:tip="Test Tip"
+                    app:tipOff="Test Tip OFF"
+                    app:tipOn="Test Tip ON" />
+
+            </com.hchen.himiuix.MiuixRadioGroup>
+
+            <com.hchen.himiuix.MiuixDropDownView
+                android:id="@+id/test_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/drop_down"
+                android:icon="@drawable/ic_default_icon"
+                android:summary="Test Summary"
+                android:title="Test Title"
+                app:indicator="@drawable/miuix_indicator_arrow_right"
+                app:tip="Test Tip" />
+
+            <com.hchen.himiuix.MiuixEditTextView
+                android:id="@+id/test_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:icon="@drawable/ic_default_icon"
+                android:summary="Test Summary"
+                android:title="Test Title"
+                app:editIcon="@drawable/ic_default_icon"
+                app:editTip="QQ"
+                app:tip="Test Tip" />
+
+            <com.hchen.himiuix.MiuixSeekBarView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:defaultValue="60"
+                android:format="%"
+                android:icon="@drawable/ic_default_icon"
+                android:summary="Test Summary"
+                android:title="Test Title"
+                android:value="60"
+                app:alwaysHapticFeedback="true"
+                app:dividerValue="10"
+                app:enableDialogMode="true"
+                app:maxValue="100"
+                app:minValue="10"
+                app:tip="Test Tip" />
+
+            <com.hchen.himiuix.MiuixColorPickerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:icon="@drawable/ic_default_icon"
+                android:summary="Test Summary"
+                android:title="Test Title"
+                app:alwaysHapticFeedback="true"
+                app:tip="Test Tip" />
+
+            <com.hchen.himiuix.MiuixColorPickerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:icon="@drawable/ic_default_icon"
+                android:summary="Test Summary"
+                android:title="Test Title"
+                app:alwaysHapticFeedback="true"
+                app:enableDialogMode="false"
+                app:tip="Test Tip" />
+
+            <com.hchen.himiuix.MiuixListView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/drop_down"
+                android:maxHeight="300dp"
+                android:summary="Test Summary"
+                android:title="Test Title"
+                app:enableDialogMode="false" />
+        </com.hchen.himiuix.MiuixViewGroup>
+    </LinearLayout>
+</ScrollView>
