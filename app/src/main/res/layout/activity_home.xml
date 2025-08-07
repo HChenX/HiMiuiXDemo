@@ -14,6 +14,19 @@
         <com.hchen.himiuix.MiuixViewGroup
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:dividerTitle="Miuix Ui Mode">
+
+            <com.hchen.himiuix.MiuixSwitchView
+                android:id="@+id/miuix_dark_mode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:summary="切换至深色模式"
+                android:title="深色模式" />
+        </com.hchen.himiuix.MiuixViewGroup>
+
+        <com.hchen.himiuix.MiuixViewGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             app:dividerTitle="Miuix Basic">
 
             <com.hchen.himiuix.MiuixBasicView

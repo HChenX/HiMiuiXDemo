@@ -18,9 +18,12 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
 
 import com.hchen.himiuix.MiuixBasicView;
+import com.hchen.himiuix.MiuixSwitchView;
+import com.hchen.himiuix.callback.OnStateChangeListener;
 import com.hchen.himiuix.dialog.MiuixAlertDialog;
 import com.hchen.himiuixdemo.R;
 
@@ -39,6 +42,17 @@ public class HomeFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        MiuixSwitchView switchView = view.findViewById(R.id.miuix_dark_mode);
+        switchView.setOnStateChangeListener(new OnStateChangeListener() {
+            @Override
+            public boolean onStateChange(boolean newValue) {
+                if (newValue)
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                else AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                return true;
+            }
+        });
 
         MiuixBasicView xBasicView = view.findViewById(R.id.miuix_test);
         xBasicView.setOnClickListener(v -> {
