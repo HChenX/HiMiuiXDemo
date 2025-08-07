@@ -20,6 +20,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.hchen.himiuix.MiuixBasicView;
+import com.hchen.himiuix.dialog.MiuixAlertDialog;
 import com.hchen.himiuixdemo.R;
 
 /**
@@ -37,5 +39,18 @@ public class HomeFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        MiuixBasicView xBasicView = view.findViewById(R.id.miuix_test);
+        xBasicView.setOnClickListener(v -> {
+            new MiuixAlertDialog(getContext())
+                .setTitle("Test Title")
+                .setMessage("Test Message")
+                .setHapticFeedbackEnabled(true)
+                .setCancelable(false)
+                .setCanceledOnTouchOutside(false)
+                .setNegativeButton(getContext().getString(com.hchen.himiuix.R.string.dialog_negative), null)
+                .setPositiveButton(getContext().getString(com.hchen.himiuix.R.string.dialog_positive), null)
+                .show();
+        });
     }
 }

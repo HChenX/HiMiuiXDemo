@@ -56,6 +56,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         content = findViewById(R.id.content);
 
+        // 使用此方法手动控制 EditText 键盘布局顶起行为
+        // Android FUCK YOU!!
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), new OnApplyWindowInsetsListener() {
             private int originalHeight;
             private final Point windowPoint;

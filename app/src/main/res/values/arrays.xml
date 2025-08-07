@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="drop_down">
-        <item>HiMiuix</item>
-        <item>HiMiuix</item>
-        <item>HiMiuix</item>
-        <item>HiMiuix</item>
-        <item>HiMiuix</item>
-        <item>HiMiuix</item>
-        <item>HiMiuix</item>
-        <item>HiMiuix</item>
+        <item>HiMiuix Item 0</item>
+        <item>HiMiuix Item 1</item>
+        <item>HiMiuix Item 2</item>
+        <item>HiMiuix Item 3</item>
+        <item>HiMiuix Item 4</item>
+        <item>HiMiuix Item 5</item>
+        <item>HiMiuix Item 6</item>
+        <item>HiMiuix Item 7</item>
+        <item>HiMiuix Item 8</item>
     </string-array>
 </resources>
