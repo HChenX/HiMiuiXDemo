@@ -32,6 +32,7 @@ public class SettingsFragment extends BasePreferenceFragment {
     @Override
     void initPrefs() {
         MiuixSwitchPreference preference = findPreference("prefs_ui_switch");
+        preference.setChecked(AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES);
         preference.setOnStateChangeListener(new OnStateChangeListener() {
             @Override
             public boolean onStateChange(boolean newValue) {
