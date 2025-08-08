@@ -14,7 +14,7 @@
         <com.hchen.himiuix.MiuixViewGroup
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:dividerTitle="Miuix Ui Mode">
+            app:dividerTitle="Miuix Ui Switch">
 
             <com.hchen.himiuix.MiuixSwitchView
                 android:id="@+id/miuix_dark_mode"
