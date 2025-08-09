@@ -10,6 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
         <com.hchen.himiuix.MiuixViewGroup
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -254,6 +255,7 @@
                 android:summary="Test Summary"
                 android:title="Test Title"
                 app:alwaysHapticFeedback="true"
+                app:enableDialogMode="true"
                 app:maxValue="100"
                 app:minValue="0"
                 app:stepValue="10" />
