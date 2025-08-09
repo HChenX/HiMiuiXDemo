@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.hchen.himiuix.preference.MiuixPreferenceCategory>
+        <com.hchen.himiuix.preference.MiuixPreference
+            android:hapticFeedbackEnabled="false"
+            android:layout="@layout/layout_icon"
+            app:shadowEnabled="false" />
+    </com.hchen.himiuix.preference.MiuixPreferenceCategory>
+
+    <com.hchen.himiuix.preference.MiuixPreferenceCategory android:title="Miuix Ui Switch">
+        <com.hchen.himiuix.preference.MiuixDropDownPreference
+            android:defaultValue="0"
+            android:entries="@array/color_mode"
+            android:key="prefs_color"
+            android:summary="深色/浅色模式切换"
+            android:title="主题颜色" />
+    </com.hchen.himiuix.preference.MiuixPreferenceCategory>
+
+    <com.hchen.himiuix.preference.MiuixPreferenceCategory android:title="Miuix developer">
+        <com.hchen.himiuix.preference.MiuixPreference
+            android:icon="@drawable/hc"
+            android:key="prefs_hc"
+            android:summary="GitHub| Developer"
+            android:title="HChenX"
+            app:iconRadius="10dp" />
+    </com.hchen.himiuix.preference.MiuixPreferenceCategory>
+
+    <com.hchen.himiuix.preference.MiuixPreferenceCategory android:title="Miuix About">
+        <com.hchen.himiuix.preference.MiuixPreference
+            android:hapticFeedbackEnabled="false"
+            android:key="prefs_about"
+            android:layout="@layout/layout_about"
+            android:title="About"
+            app:shadowEnabled="false" />
+    </com.hchen.himiuix.preference.MiuixPreferenceCategory>
+</androidx.preference.PreferenceScreen>

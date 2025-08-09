@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="0dp"
+    app:cardBackgroundColor="@android:color/transparent"
+    app:cardCornerRadius="15dp"
+    app:cardElevation="0dp"
+    app:cardPreventCornerOverlap="false"
+    app:cardUseCompatPadding="false"
+    app:contentPadding="0dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <com.hchen.himiuix.MiuixBasicView
+            android:id="@+id/github_source"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/miuix_card_other"
+            android:title="Github Source" />
+
+        <com.hchen.himiuix.MiuixBasicView
+            android:id="@+id/tg_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/miuix_card_other"
+            android:title="TG Group" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

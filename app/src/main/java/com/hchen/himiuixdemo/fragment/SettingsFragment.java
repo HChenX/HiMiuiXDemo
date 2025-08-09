@@ -12,10 +12,11 @@
 package com.hchen.himiuixdemo.fragment;
 
 
-import androidx.appcompat.app.AppCompatDelegate;
+import androidx.annotation.NonNull;
+import androidx.preference.Preference;
 
-import com.hchen.himiuix.callback.OnStateChangeListener;
-import com.hchen.himiuix.preference.MiuixSwitchPreference;
+import com.hchen.himiuix.dialog.MiuixAlertDialog;
+import com.hchen.himiuix.preference.MiuixPreference;
 import com.hchen.himiuixdemo.R;
 
 /**
@@ -31,14 +32,19 @@ public class SettingsFragment extends BasePreferenceFragment {
 
     @Override
     void initPrefs() {
-        MiuixSwitchPreference preference = findPreference("prefs_ui_switch");
-        preference.setChecked(AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES);
-        preference.setOnStateChangeListener(new OnStateChangeListener() {
+        MiuixPreference preference = findPreference("prefs_test");
+        preference.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
             @Override
-            public boolean onStateChange(boolean newValue) {
-                if (newValue)
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-                else AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+            public boolean onPreferenceClick(@NonNull Preference preference) {
+                new MiuixAlertDialog(getContext())
+                    .setTitle("Test Title")
+                    .setMessage("Test Message")
+                    .setHapticFeedbackEnabled(true)
+                    .setCancelable(false)
+                    .setCanceledOnTouchOutside(false)
+                    .setNegativeButton(getContext().getString(com.hchen.himiuix.R.string.dialog_negative), null)
+                    .setPositiveButton(getContext().getString(com.hchen.himiuix.R.string.dialog_positive), null)
+                    .show();
                 return true;
             }
         });

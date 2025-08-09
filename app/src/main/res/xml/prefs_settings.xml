@@ -1,16 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-
-    <com.hchen.himiuix.preference.MiuixPreferenceCategory android:title="Miuix Ui Switch Preference">
-        <com.hchen.himiuix.preference.MiuixSwitchPreference
-            android:key="prefs_ui_switch"
-            android:summary="切换至深色模式"
-            android:title="深色模式" />
-    </com.hchen.himiuix.preference.MiuixPreferenceCategory>
-
     <com.hchen.himiuix.preference.MiuixPreferenceCategory android:title="Miuix Basic Preference">
         <com.hchen.himiuix.preference.MiuixPreference
+            android:key="prefs_test"
             android:id="@+id/miuix_test"
             android:summary="Test Summary"
             android:title="Test Title" />

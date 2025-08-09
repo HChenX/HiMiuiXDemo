@@ -11,4 +11,10 @@
         <item>HiMiuix Item 7</item>
         <item>HiMiuix Item 8</item>
     </string-array>
+
+    <string-array name="color_mode">
+        <item>System</item>
+        <item>Light</item>
+        <item>Dark</item>
+    </string-array>
 </resources>

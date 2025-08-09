@@ -36,6 +36,7 @@ dependencies {
     implementation libs.annotation
     implementation libs.appcompat
     implementation libs.activity
+    implementation libs.cardview
 
     debugImplementation libs.leakcanary.android
 }
