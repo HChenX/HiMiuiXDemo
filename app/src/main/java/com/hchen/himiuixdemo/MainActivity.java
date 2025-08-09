@@ -29,6 +29,7 @@ import androidx.fragment.app.Fragment;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
+import com.hchen.himiuix.helper.ImeHelper;
 import com.hchen.himiuix.utils.MiuixUtils;
 import com.hchen.himiuixdemo.fragment.AboutFragment;
 import com.hchen.himiuixdemo.fragment.HomeFragment;
@@ -73,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
             public WindowInsetsCompat onApplyWindowInsets(@NonNull View v, @NonNull WindowInsetsCompat insets) {
                 Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
                 v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+                ImeHelper.init().onApplyWindowInsets(v, insets);
 
                 if (insets.isVisible(WindowInsetsCompat.Type.ime())) {
                     Insets ime = insets.getInsets(WindowInsetsCompat.Type.ime());
