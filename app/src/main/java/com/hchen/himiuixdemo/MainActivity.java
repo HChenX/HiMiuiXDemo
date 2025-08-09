@@ -42,6 +42,7 @@ import java.util.ArrayList;
  * @author 焕晨HChen
  */
 public class MainActivity extends AppCompatActivity {
+    private static final String TAG = "HiMiuix:Activity";
     private final int DELAY_IN_LIFTING = 200;
     private View content;
     private int touchX;
@@ -58,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
 
         // 使用此方法手动控制 EditText 键盘布局顶起行为
         // Android FUCK YOU!!
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), new OnApplyWindowInsetsListener() {
+        ViewCompat.setOnApplyWindowInsetsListener(getWindow().getDecorView(), new OnApplyWindowInsetsListener() {
             private int originalHeight;
             private final Point windowPoint;
 
