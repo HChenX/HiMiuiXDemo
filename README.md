@@ -1,5 +1,5 @@
 <div align="center">
-<h1>HiMiuix</h1>
+<h1>HiMiuixDemo</h1>
 
 ![stars](https://img.shields.io/github/stars/HChenX/HiMiuixDemo?style=flat)
 ![Github repo size](https://img.shields.io/github/repo-size/HChenX/HiMiuixDemo)
