@@ -1,385 +1,393 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.hchen.himiuix.springback.SpringBackLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/home_pager"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:scrollbars="none">
+    android:scrollbars="none"
+    app:scrollableView="@id/content_1">
 
-    <LinearLayout
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/content_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:scrollbars="none">
 
-        <com.hchen.himiuix.MiuixViewGroup
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:dividerTitle="Miuix Basic">
+            android:orientation="vertical">
 
-            <com.hchen.himiuix.MiuixBasicView
-                android:id="@+id/miuix_test"
+            <com.hchen.himiuix.MiuixViewGroup
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:summary="Test Summary"
-                android:title="Test Title" />
+                app:dividerTitle="Miuix Basic">
 
-            <com.hchen.himiuix.MiuixBasicView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:icon="@drawable/ic_default_icon"
-                android:summary="Test Summary"
-                android:title="Test Title" />
-
-            <com.hchen.himiuix.MiuixBasicView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:enabled="false"
-                android:summary="Test Summary"
-                android:title="Test Title" />
-
-            <com.hchen.himiuix.MiuixBasicView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:enabled="false"
-                android:icon="@drawable/ic_default_icon"
-                android:summary="Test Summary"
-                android:title="Test Title" />
-        </com.hchen.himiuix.MiuixViewGroup>
-
-        <com.hchen.himiuix.MiuixViewGroup
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:dividerTitle="Miuix Switch">
-
-            <com.hchen.himiuix.MiuixSwitchView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:summary="Test Summary"
-                android:title="Test Title" />
-
-            <com.hchen.himiuix.MiuixSwitchView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:checked="true"
-                android:summary="Test Summary"
-                android:summaryOff="Summary OFF"
-                android:summaryOn="Summary ON"
-                android:title="Test Title"
-                app:tipOff="Tip OFF"
-                app:tipOn="Tip ON" />
-
-            <com.hchen.himiuix.MiuixSwitchView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:enabled="false"
-                android:icon="@drawable/ic_default_icon"
-                android:summary="Test Summary"
-                android:title="Test Title" />
-
-            <com.hchen.himiuix.MiuixSwitchView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:checked="true"
-                android:enabled="false"
-                android:icon="@drawable/ic_default_icon"
-                android:summary="Test Summary"
-                android:title="Test Title" />
-
-        </com.hchen.himiuix.MiuixViewGroup>
-
-        <com.hchen.himiuix.MiuixViewGroup
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:dividerTitle="Miuix CheckBox">
-
-            <com.hchen.himiuix.MiuixCheckBoxView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:summary="Test Summary"
-                android:title="Test Title" />
-
-            <com.hchen.himiuix.MiuixCheckBoxView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:checked="true"
-                android:icon="@drawable/ic_default_icon"
-                android:summary="Test Summary"
-                android:summaryOff="Summary OFF"
-                android:summaryOn="Summary ON"
-                android:title="Test Title"
-                app:tipOff="Tip OFF"
-                app:tipOn="Tip ON" />
-
-            <com.hchen.himiuix.MiuixCheckBoxView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:enabled="false"
-                android:summary="Test Summary"
-                android:title="Test Title" />
-
-            <com.hchen.himiuix.MiuixCheckBoxView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:checked="true"
-                android:enabled="false"
-                android:summary="Test Summary"
-                android:title="Test Title" />
-        </com.hchen.himiuix.MiuixViewGroup>
-
-        <com.hchen.himiuix.MiuixViewGroup
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:dividerTitle="Miuix RadioButton">
-
-            <com.hchen.himiuix.MiuixRadioGroup
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <com.hchen.himiuix.MiuixRadioButtonView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:checked="true"
-                    android:summary="Test Summary"
-                    android:title="Test Title" />
-
-                <com.hchen.himiuix.MiuixRadioButtonView
+                <com.hchen.himiuix.MiuixBasicView
+                    android:id="@+id/miuix_test"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:summary="Test Summary"
                     android:title="Test Title" />
 
-                <com.hchen.himiuix.MiuixRadioButtonView
+                <com.hchen.himiuix.MiuixBasicView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:icon="@drawable/ic_default_icon"
                     android:summary="Test Summary"
                     android:title="Test Title" />
 
-                <com.hchen.himiuix.MiuixRadioButtonView
+                <com.hchen.himiuix.MiuixBasicView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:enabled="false"
                     android:summary="Test Summary"
                     android:title="Test Title" />
-            </com.hchen.himiuix.MiuixRadioGroup>
-        </com.hchen.himiuix.MiuixViewGroup>
 
-        <com.hchen.himiuix.MiuixViewGroup
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:dividerTitle="Miuix DropDown">
+                <com.hchen.himiuix.MiuixBasicView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    android:icon="@drawable/ic_default_icon"
+                    android:summary="Test Summary"
+                    android:title="Test Title" />
+            </com.hchen.himiuix.MiuixViewGroup>
 
-            <com.hchen.himiuix.MiuixDropDownView
+            <com.hchen.himiuix.MiuixViewGroup
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:entries="@array/drop_down"
-                android:summary="Test Summary"
-                android:title="Test Title" />
+                app:dividerTitle="Miuix Switch">
 
-            <com.hchen.himiuix.MiuixDropDownView
+                <com.hchen.himiuix.MiuixSwitchView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:summary="Test Summary"
+                    android:title="Test Title" />
+
+                <com.hchen.himiuix.MiuixSwitchView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:summary="Test Summary"
+                    android:summaryOff="Summary OFF"
+                    android:summaryOn="Summary ON"
+                    android:title="Test Title"
+                    app:tipOff="Tip OFF"
+                    app:tipOn="Tip ON" />
+
+                <com.hchen.himiuix.MiuixSwitchView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    android:icon="@drawable/ic_default_icon"
+                    android:summary="Test Summary"
+                    android:title="Test Title" />
+
+                <com.hchen.himiuix.MiuixSwitchView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:enabled="false"
+                    android:icon="@drawable/ic_default_icon"
+                    android:summary="Test Summary"
+                    android:title="Test Title" />
+
+            </com.hchen.himiuix.MiuixViewGroup>
+
+            <com.hchen.himiuix.MiuixViewGroup
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:entries="@array/drop_down"
-                android:icon="@drawable/ic_default_icon"
-                android:summary="Test Summary"
-                android:title="Test Title"
-                android:value="1"
-                app:showOnTip="true" />
+                app:dividerTitle="Miuix CheckBox">
 
-            <com.hchen.himiuix.MiuixDropDownView
+                <com.hchen.himiuix.MiuixCheckBoxView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:summary="Test Summary"
+                    android:title="Test Title" />
+
+                <com.hchen.himiuix.MiuixCheckBoxView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:icon="@drawable/ic_default_icon"
+                    android:summary="Test Summary"
+                    android:summaryOff="Summary OFF"
+                    android:summaryOn="Summary ON"
+                    android:title="Test Title"
+                    app:tipOff="Tip OFF"
+                    app:tipOn="Tip ON" />
+
+                <com.hchen.himiuix.MiuixCheckBoxView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    android:summary="Test Summary"
+                    android:title="Test Title" />
+
+                <com.hchen.himiuix.MiuixCheckBoxView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:enabled="false"
+                    android:summary="Test Summary"
+                    android:title="Test Title" />
+            </com.hchen.himiuix.MiuixViewGroup>
+
+            <com.hchen.himiuix.MiuixViewGroup
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:enabled="false"
-                android:entries="@array/drop_down"
-                android:summary="Test Summary"
-                android:title="Test Title" />
+                app:dividerTitle="Miuix RadioButton">
 
-            <com.hchen.himiuix.MiuixDropDownView
+                <com.hchen.himiuix.MiuixRadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <com.hchen.himiuix.MiuixRadioButtonView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:summary="Test Summary"
+                        android:title="Test Title" />
+
+                    <com.hchen.himiuix.MiuixRadioButtonView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:summary="Test Summary"
+                        android:title="Test Title" />
+
+                    <com.hchen.himiuix.MiuixRadioButtonView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:summary="Test Summary"
+                        android:title="Test Title" />
+
+                    <com.hchen.himiuix.MiuixRadioButtonView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:enabled="false"
+                        android:summary="Test Summary"
+                        android:title="Test Title" />
+                </com.hchen.himiuix.MiuixRadioGroup>
+            </com.hchen.himiuix.MiuixViewGroup>
+
+            <com.hchen.himiuix.MiuixViewGroup
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:enabled="false"
-                android:entries="@array/drop_down"
-                android:icon="@drawable/ic_default_icon"
-                android:summary="Test Summary"
-                android:title="Test Title"
-                android:value="1"
-                app:showOnTip="true" />
-        </com.hchen.himiuix.MiuixViewGroup>
+                app:dividerTitle="Miuix DropDown">
 
-        <com.hchen.himiuix.MiuixViewGroup
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:dividerTitle="Miuix Edit">
+                <com.hchen.himiuix.MiuixDropDownView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/drop_down"
+                    android:summary="Test Summary"
+                    android:title="Test Title" />
 
-            <com.hchen.himiuix.MiuixEditTextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                <com.hchen.himiuix.MiuixDropDownView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/drop_down"
+                    android:icon="@drawable/ic_default_icon"
+                    android:summary="Test Summary"
+                    android:title="Test Title"
+                    android:value="1"
+                    app:showOnTip="true" />
 
-            <com.hchen.himiuix.MiuixEditTextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Edit..."
-                android:summary="Test Summary"
-                android:title="Test Title"
-                app:editIcon="@drawable/ic_default_icon"
-                app:editTip="QQ" />
+                <com.hchen.himiuix.MiuixDropDownView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    android:entries="@array/drop_down"
+                    android:summary="Test Summary"
+                    android:title="Test Title" />
 
-            <com.hchen.himiuix.MiuixEditTextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:enabled="false"
-                android:summary="Test Summary"
-                android:title="Test Title" />
-        </com.hchen.himiuix.MiuixViewGroup>
+                <com.hchen.himiuix.MiuixDropDownView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    android:entries="@array/drop_down"
+                    android:icon="@drawable/ic_default_icon"
+                    android:summary="Test Summary"
+                    android:title="Test Title"
+                    android:value="1"
+                    app:showOnTip="true" />
+            </com.hchen.himiuix.MiuixViewGroup>
 
-        <com.hchen.himiuix.MiuixViewGroup
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:dividerTitle="Miuix Seekbar">
-
-            <com.hchen.himiuix.MiuixSeekBarView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:defaultValue="50"
-                android:summary="Test Summary"
-                android:title="Test Title"
-                app:alwaysHapticFeedback="true"
-                app:maxValue="100"
-                app:minValue="0"
-                app:showDefaultPoint="true"
-                app:showValueOnTip="true" />
-
-            <com.hchen.himiuix.MiuixSeekBarView
+            <com.hchen.himiuix.MiuixViewGroup
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:defaultValue="50"
-                android:summary="Test Summary"
-                android:title="Test Title"
-                app:alwaysHapticFeedback="true"
-                app:enableDialogMode="true"
-                app:maxValue="100"
-                app:minValue="0"
-                app:stepValue="10" />
+                app:dividerTitle="Miuix Edit">
 
-            <com.hchen.himiuix.MiuixSeekBarView
+                <com.hchen.himiuix.MiuixEditTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <com.hchen.himiuix.MiuixEditTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Edit..."
+                    android:summary="Test Summary"
+                    android:title="Test Title"
+                    app:editIcon="@drawable/ic_default_icon"
+                    app:editTip="QQ" />
+
+                <com.hchen.himiuix.MiuixEditTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    android:summary="Test Summary"
+                    android:title="Test Title" />
+            </com.hchen.himiuix.MiuixViewGroup>
+
+            <com.hchen.himiuix.MiuixViewGroup
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:defaultValue="50"
-                android:format="%"
-                android:summary="Test Summary"
-                android:title="Test Title"
-                android:value="50"
-                app:alwaysHapticFeedback="true"
-                app:dividerValue="100"
-                app:enableDialogMode="true"
-                app:maxValue="100"
-                app:minValue="0" />
+                app:dividerTitle="Miuix Seekbar">
 
-            <com.hchen.himiuix.MiuixSeekBarView
+                <com.hchen.himiuix.MiuixSeekBarView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:defaultValue="50"
+                    android:summary="Test Summary"
+                    android:title="Test Title"
+                    app:alwaysHapticFeedback="true"
+                    app:maxValue="100"
+                    app:minValue="0"
+                    app:showDefaultPoint="true"
+                    app:showValueOnTip="true" />
+
+                <com.hchen.himiuix.MiuixSeekBarView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:defaultValue="50"
+                    android:summary="Test Summary"
+                    android:title="Test Title"
+                    app:alwaysHapticFeedback="true"
+                    app:enableDialogMode="true"
+                    app:maxValue="100"
+                    app:minValue="0"
+                    app:stepValue="10" />
+
+                <com.hchen.himiuix.MiuixSeekBarView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:defaultValue="50"
+                    android:format="%"
+                    android:summary="Test Summary"
+                    android:title="Test Title"
+                    android:value="50"
+                    app:alwaysHapticFeedback="true"
+                    app:dividerValue="100"
+                    app:enableDialogMode="true"
+                    app:maxValue="100"
+                    app:minValue="0" />
+
+                <com.hchen.himiuix.MiuixSeekBarView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:defaultValue="50"
+                    android:enabled="false"
+                    android:summary="Test Summary"
+                    android:title="Test Title"
+                    android:value="50"
+                    app:maxValue="100"
+                    app:minValue="0" />
+            </com.hchen.himiuix.MiuixViewGroup>
+
+            <com.hchen.himiuix.MiuixViewGroup
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:defaultValue="50"
-                android:enabled="false"
-                android:summary="Test Summary"
-                android:title="Test Title"
-                android:value="50"
-                app:maxValue="100"
-                app:minValue="0" />
-        </com.hchen.himiuix.MiuixViewGroup>
+                app:dividerTitle="Miuix ColorPicker">
 
-        <com.hchen.himiuix.MiuixViewGroup
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:dividerTitle="Miuix ColorPicker">
+                <com.hchen.himiuix.MiuixColorPickerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:color="#FF099CFC"
+                    android:summary="Test Summary"
+                    android:title="Test Title"
+                    app:alwaysHapticFeedback="true"
+                    app:showValueOnTip="true" />
 
-            <com.hchen.himiuix.MiuixColorPickerView
+                <com.hchen.himiuix.MiuixColorPickerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:color="#FF099CFC"
+                    android:summary="Test Summary"
+                    android:title="Test Title"
+                    app:alwaysHapticFeedback="true"
+                    app:enableDialogMode="false"
+                    app:showValueOnTip="true" />
+
+                <com.hchen.himiuix.MiuixColorPickerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:color="#FF099CFC"
+                    android:enabled="false"
+                    android:summary="Test Summary"
+                    android:title="Test Title"
+                    app:alwaysHapticFeedback="true"
+                    app:showValueOnTip="true" />
+
+                <com.hchen.himiuix.MiuixColorPickerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:color="#FF099CFC"
+                    android:enabled="false"
+                    android:summary="Test Summary"
+                    android:title="Test Title"
+                    app:alwaysHapticFeedback="true"
+                    app:enableDialogMode="false"
+                    app:showValueOnTip="true" />
+            </com.hchen.himiuix.MiuixViewGroup>
+
+            <com.hchen.himiuix.MiuixViewGroup
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:color="#FF099CFC"
-                android:summary="Test Summary"
-                android:title="Test Title"
-                app:alwaysHapticFeedback="true"
-                app:showValueOnTip="true" />
+                app:dividerTitle="Miuix ListView"
+                app:marginBottomEnabled="true">
 
-            <com.hchen.himiuix.MiuixColorPickerView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:color="#FF099CFC"
-                android:summary="Test Summary"
-                android:title="Test Title"
-                app:alwaysHapticFeedback="true"
-                app:enableDialogMode="false"
-                app:showValueOnTip="true" />
+                <com.hchen.himiuix.MiuixListView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/drop_down"
+                    android:maxHeight="300dp"
+                    android:summary="Test Summary"
+                    android:title="Test Title"
+                    app:enableDialogMode="true"
+                    app:multipleChoiceEnabled="true" />
 
-            <com.hchen.himiuix.MiuixColorPickerView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:color="#FF099CFC"
-                android:enabled="false"
-                android:summary="Test Summary"
-                android:title="Test Title"
-                app:alwaysHapticFeedback="true"
-                app:showValueOnTip="true" />
+                <com.hchen.himiuix.MiuixListView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/drop_down"
+                    android:maxHeight="300dp"
+                    android:summary="Test Summary"
+                    android:title="Test Title"
+                    app:enableDialogMode="false"
+                    app:multipleChoiceEnabled="true" />
 
-            <com.hchen.himiuix.MiuixColorPickerView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:color="#FF099CFC"
-                android:enabled="false"
-                android:summary="Test Summary"
-                android:title="Test Title"
-                app:alwaysHapticFeedback="true"
-                app:enableDialogMode="false"
-                app:showValueOnTip="true" />
-        </com.hchen.himiuix.MiuixViewGroup>
+                <com.hchen.himiuix.MiuixListView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    android:entries="@array/drop_down"
+                    android:maxHeight="300dp"
+                    android:summary="Test Summary"
+                    android:title="Test Title"
+                    app:enableDialogMode="true"
+                    app:multipleChoiceEnabled="true" />
 
-        <com.hchen.himiuix.MiuixViewGroup
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:dividerTitle="Miuix ListView"
-            app:marginBottomEnabled="true">
+                <com.hchen.himiuix.MiuixListView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    android:entries="@array/drop_down"
+                    android:maxHeight="300dp"
+                    android:summary="Test Summary"
+                    android:title="Test Title"
+                    app:enableDialogMode="false"
+                    app:multipleChoiceEnabled="true" />
 
-            <com.hchen.himiuix.MiuixListView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:entries="@array/drop_down"
-                android:maxHeight="300dp"
-                android:summary="Test Summary"
-                android:title="Test Title"
-                app:enableDialogMode="true"
-                app:multipleChoiceEnabled="true" />
-
-            <com.hchen.himiuix.MiuixListView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:entries="@array/drop_down"
-                android:maxHeight="300dp"
-                android:summary="Test Summary"
-                android:title="Test Title"
-                app:enableDialogMode="false"
-                app:multipleChoiceEnabled="true" />
-
-            <com.hchen.himiuix.MiuixListView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:enabled="false"
-                android:entries="@array/drop_down"
-                android:maxHeight="300dp"
-                android:summary="Test Summary"
-                android:title="Test Title"
-                app:enableDialogMode="true"
-                app:multipleChoiceEnabled="true" />
-
-            <com.hchen.himiuix.MiuixListView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:enabled="false"
-                android:entries="@array/drop_down"
-                android:maxHeight="300dp"
-                android:summary="Test Summary"
-                android:title="Test Title"
-                app:enableDialogMode="false"
-                app:multipleChoiceEnabled="true" />
-
-        </com.hchen.himiuix.MiuixViewGroup>
-    </LinearLayout>
-</ScrollView>
+            </com.hchen.himiuix.MiuixViewGroup>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</com.hchen.himiuix.springback.SpringBackLayout>
