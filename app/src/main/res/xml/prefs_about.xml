@@ -22,7 +22,7 @@
         <com.hchen.himiuix.preference.MiuixPreference
             android:icon="@drawable/hc"
             android:key="prefs_hc"
-            android:summary="GitHub| Developer"
+            android:summary="GitHub | Developer"
             android:title="HChenX"
             app:iconRadius="10dp" />
     </com.hchen.himiuix.preference.MiuixPreferenceCategory>
