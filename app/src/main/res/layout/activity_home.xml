@@ -224,11 +224,8 @@
                 <com.hchen.himiuix.MiuixEditTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Edit..."
                     android:summary="Test Summary"
-                    android:title="Test Title"
-                    app:editIcon="@drawable/ic_default_icon"
-                    app:editTip="QQ" />
+                    android:title="Test Title" />
 
                 <com.hchen.himiuix.MiuixEditTextView
                     android:layout_width="match_parent"

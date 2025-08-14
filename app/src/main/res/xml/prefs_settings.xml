@@ -145,24 +145,6 @@
             app:showOnTip="true" />
     </com.hchen.himiuix.preference.MiuixPreferenceCategory>
 
-    <com.hchen.himiuix.preference.MiuixPreferenceCategory android:title="Miuix Edit Preference">
-        <com.hchen.himiuix.preference.MiuixEditPreference
-            android:summary="Test Summary"
-            android:title="Test Title" />
-
-        <com.hchen.himiuix.preference.MiuixEditPreference
-            android:hint="Edit..."
-            android:summary="Test Summary"
-            android:title="Test Title"
-            app:editIcon="@drawable/ic_default_icon"
-            app:editTip="QQ" />
-
-        <com.hchen.himiuix.preference.MiuixEditPreference
-            android:enabled="false"
-            android:summary="Test Summary"
-            android:title="Test Title" />
-    </com.hchen.himiuix.preference.MiuixPreferenceCategory>
-
     <com.hchen.himiuix.preference.MiuixPreferenceCategory android:title="Miuix Seekbar Preference">
         <com.hchen.himiuix.preference.MiuixSeekBarPreference
             android:defaultValue="50"
