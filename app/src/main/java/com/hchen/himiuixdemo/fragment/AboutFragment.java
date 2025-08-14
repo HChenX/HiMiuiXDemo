@@ -40,6 +40,9 @@ public class AboutFragment extends BasePreferenceFragment implements View.OnClic
     @Override
     void initPrefs() {
         MiuixPreference preference = findPreference("prefs_about");
+        View view = preference.getCustomView();
+        view.findViewById(R.id.github_source).setOnClickListener(this);
+        view.findViewById(R.id.tg_group).setOnClickListener(this);
 
         MiuixPreference preference1 = findPreference("prefs_hc");
         preference1.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
