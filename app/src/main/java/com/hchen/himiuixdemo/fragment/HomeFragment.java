@@ -18,10 +18,10 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
 
 import com.hchen.himiuix.MiuixBasicView;
 import com.hchen.himiuix.dialog.MiuixAlertDialog;
+import com.hchen.himiuix.fragment.Fragment;
 import com.hchen.himiuixdemo.R;
 
 /**

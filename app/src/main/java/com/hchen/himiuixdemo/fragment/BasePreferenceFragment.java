@@ -14,7 +14,8 @@ package com.hchen.himiuixdemo.fragment;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
-import androidx.preference.PreferenceFragmentCompat;
+
+import com.hchen.himiuix.fragment.PreferenceFragmentCompat;
 
 /**
  * Base Fragment

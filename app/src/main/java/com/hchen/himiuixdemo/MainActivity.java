@@ -20,7 +20,6 @@ import android.widget.RadioGroup;
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.core.graphics.Insets;
 import androidx.core.view.OnApplyWindowInsetsListener;
 import androidx.core.view.ViewCompat;
@@ -29,6 +28,7 @@ import androidx.fragment.app.Fragment;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
+import com.hchen.himiuix.MiuixAppBar;
 import com.hchen.himiuix.helper.ImeHelper;
 import com.hchen.himiuix.utils.MiuixUtils;
 import com.hchen.himiuixdemo.fragment.AboutFragment;
@@ -72,8 +72,6 @@ public class MainActivity extends AppCompatActivity {
             @NonNull
             @Override
             public WindowInsetsCompat onApplyWindowInsets(@NonNull View v, @NonNull WindowInsetsCompat insets) {
-                Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-                v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
                 ImeHelper.init().onApplyWindowInsets(v, insets);
 
                 if (insets.isVisible(WindowInsetsCompat.Type.ime())) {
@@ -101,7 +99,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), new OnApplyWindowInsetsListener() {
+            @NonNull @Override
+            public WindowInsetsCompat onApplyWindowInsets(@NonNull View v, @NonNull WindowInsetsCompat insets) {
+                Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+                v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+                return insets;
+            }
+        });
+
+        MiuixAppBar toolbar = findViewById(R.id.toolbar);
         ViewPager2 viewPager2 = (ViewPager2) content;
         RadioGroup radioGroup = findViewById(R.id.radio_group);
 

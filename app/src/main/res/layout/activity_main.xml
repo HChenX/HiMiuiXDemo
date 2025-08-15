@@ -8,17 +8,18 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <androidx.appcompat.widget.Toolbar
+    <com.hchen.himiuix.MiuixAppBar
         android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:title="AppRetention" />
-
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/content"
         android:layout_weight="1"
         android:layout_width="match_parent"
-        android:layout_height="0dp" />
+        android:layout_height="0dp"
+        app:title="AppRetention" >
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </com.hchen.himiuix.MiuixAppBar>
 
     <View
         android:layout_width="match_parent"
