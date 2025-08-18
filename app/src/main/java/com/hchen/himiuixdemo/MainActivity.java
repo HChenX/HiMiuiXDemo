@@ -11,26 +11,14 @@
  */
 package com.hchen.himiuixdemo;
 
-import android.graphics.Point;
 import android.os.Bundle;
-import android.view.MotionEvent;
-import android.view.View;
 import android.widget.RadioGroup;
 
-import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.OnApplyWindowInsetsListener;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
-import com.hchen.himiuix.MiuixAppBar;
-import com.hchen.himiuix.helper.ImeHelper;
-import com.hchen.himiuix.utils.MiuixUtils;
 import com.hchen.himiuixdemo.fragment.AboutFragment;
 import com.hchen.himiuixdemo.fragment.HomeFragment;
 import com.hchen.himiuixdemo.fragment.SettingsFragment;
@@ -42,73 +30,15 @@ import java.util.ArrayList;
  *
  * @author 焕晨HChen
  */
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BasicActivity {
     private static final String TAG = "HiMiuix:Activity";
-    private final int DELAY_IN_LIFTING = 200;
-    private View content;
-    private int touchX;
-    private int touchY;
+    private int radioGroupHeight;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
-        getWindow().setNavigationBarContrastEnforced(false); // Xiaomi moment, this code must be here
-
         setContentView(R.layout.activity_main);
-        content = findViewById(R.id.content);
+        super.onCreate(savedInstanceState);
 
-        // 使用此方法手动控制 EditText 键盘布局顶起行为
-        // Android FUCK YOU!!
-        ViewCompat.setOnApplyWindowInsetsListener(getWindow().getDecorView(), new OnApplyWindowInsetsListener() {
-            private int originalHeight;
-            private final Point windowPoint;
-
-            {
-                windowPoint = MiuixUtils.getWindowSize(getApplicationContext());
-                content.post(() -> originalHeight = content.getHeight());
-            }
-
-            @NonNull
-            @Override
-            public WindowInsetsCompat onApplyWindowInsets(@NonNull View v, @NonNull WindowInsetsCompat insets) {
-                ImeHelper.init().onApplyWindowInsets(v, insets);
-
-                if (insets.isVisible(WindowInsetsCompat.Type.ime())) {
-                    Insets ime = insets.getInsets(WindowInsetsCompat.Type.ime());
-                    if (ime.bottom != 0) {
-                        int surplus = 0;
-                        if (touchY != 0 && (surplus = (windowPoint.y - touchY)) <= ime.bottom) {
-                            // 因为 surplus 高度依赖点击位置
-                            // 当点击位置过高时会导致 surplus 过大
-                            // 这里设置容错，保证 Edit 布局能被完整顶起
-                            surplus = surplus - MiuixUtils.dp2px(getApplicationContext(), 25);
-                            content.animate()
-                                .translationY(-(ime.bottom) + surplus)
-                                .setDuration(DELAY_IN_LIFTING)
-                                .start();
-                        }
-                    }
-                } else if (originalHeight != 0) {
-                    content.animate()
-                        .translationY(0)
-                        .setDuration(DELAY_IN_LIFTING)
-                        .start();
-                }
-                return insets;
-            }
-        });
-
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), new OnApplyWindowInsetsListener() {
-            @NonNull @Override
-            public WindowInsetsCompat onApplyWindowInsets(@NonNull View v, @NonNull WindowInsetsCompat insets) {
-                Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-                v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-                return insets;
-            }
-        });
-
-        MiuixAppBar toolbar = findViewById(R.id.toolbar);
         ViewPager2 viewPager2 = (ViewPager2) content;
         RadioGroup radioGroup = findViewById(R.id.radio_group);
 
@@ -135,32 +65,33 @@ public class MainActivity extends AppCompatActivity {
             public void onPageSelected(int position) {
                 switch (position) {
                     case 0 -> {
-                        toolbar.setTitle("Home");
+                        xAppBar.setTitle("Home");
                         radioGroup.check(R.id.home);
                     }
                     case 1 -> {
-                        toolbar.setTitle("Settings");
+                        xAppBar.setTitle("Settings");
                         radioGroup.check(R.id.settings);
                     }
                     case 2 -> {
-                        toolbar.setTitle("About");
+                        xAppBar.setTitle("About");
                         radioGroup.check(R.id.about);
                     }
                 }
             }
         });
 
+        radioGroup.post(() -> radioGroupHeight = radioGroup.getHeight());
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(@NonNull RadioGroup group, int checkedId) {
                 if (checkedId == R.id.home) {
-                    toolbar.setTitle("Home");
+                    xAppBar.setTitle("Home");
                     viewPager2.setCurrentItem(0);
                 } else if (checkedId == R.id.settings) {
-                    toolbar.setTitle("Settings");
+                    xAppBar.setTitle("Settings");
                     viewPager2.setCurrentItem(1);
                 } else if (checkedId == R.id.about) {
-                    toolbar.setTitle("About");
+                    xAppBar.setTitle("About");
                     viewPager2.setCurrentItem(2);
                 }
             }
@@ -168,11 +99,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean dispatchTouchEvent(MotionEvent ev) {
-        if (ev.getAction() == MotionEvent.ACTION_UP) {
-            touchX = (int) ev.getX();
-            touchY = (int) ev.getY();
-        }
-        return super.dispatchTouchEvent(ev);
+    int paddingLossOfLoss() {
+        return radioGroupHeight;
     }
 }

@@ -9,6 +9,7 @@
             android:title="Test Title" />
 
         <com.hchen.himiuix.preference.MiuixPreference
+            android:fragment="com.hchen.himiuixdemo.fragment.JumpFragment"
             android:icon="@drawable/ic_default_icon"
             android:summary="Test Summary"
             android:title="Test Title" />
