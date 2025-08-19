@@ -30,6 +30,7 @@ public class BasicActivity extends AppCompatActivity implements PreferenceFragme
         content = findViewById(R.id.content);
         xAppBar = findViewById(R.id.appbar);
         setSupportActionBar(xAppBar.getToolbar());
+        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
         fixIme();
     }
 

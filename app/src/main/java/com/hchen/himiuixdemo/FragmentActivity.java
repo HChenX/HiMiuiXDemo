@@ -2,6 +2,7 @@ package com.hchen.himiuixdemo;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -12,6 +13,9 @@ public class FragmentActivity extends BasicActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         setContentView(R.layout.activity_fargment);
         super.onCreate(savedInstanceState);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
+        setTitle("HiMiuix");
 
         Intent intent = getIntent();
         String name = intent.getStringExtra("fragment:name");
@@ -22,6 +26,12 @@ public class FragmentActivity extends BasicActivity {
             .beginTransaction()
             .replace(R.id.content, fragment)
             .commit();
-        setTitle("HiMiuix");
+
+        xAppBar.getToolbar().setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getOnBackPressedDispatcher().onBackPressed();
+            }
+        });
     }
 }

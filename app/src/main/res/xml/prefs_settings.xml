@@ -54,19 +54,6 @@
             android:key="prefs_switch_4"
             android:summary="Test Summary"
             android:title="Test Title" />
-
-        <com.hchen.himiuix.preference.MiuixSwitchPreference
-            android:enabled="false"
-            android:icon="@drawable/ic_default_icon"
-            android:summary="Test Summary"
-            android:title="Test Title" />
-
-        <com.hchen.himiuix.preference.MiuixSwitchPreference
-            android:defaultValue="true"
-            android:enabled="false"
-            android:icon="@drawable/ic_default_icon"
-            android:summary="Test Summary"
-            android:title="Test Title" />
     </com.hchen.himiuix.preference.MiuixPreferenceCategory>
 
     <com.hchen.himiuix.preference.MiuixPreferenceCategory android:title="Miuix CheckBox Preference">
